@@ -13,3 +13,14 @@ class Post(models.Model):
 class SubPost(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     minitext = models.TextField()
+
+"""
+Д/з 
+1 улучшить смодель для новостей (в новостях должны быть картинка и видео)
+2 улучшить модель для постов (должна быть картинка и .pdf файл)
+3 Создать подель рейтинга постов
+4 реорганизовать все .html шаблоны и переместить все стили в один файл
+5 продолжать писать про sql
+6 коды состояния http понимать
+7 протокол tcp/ip
+"""
