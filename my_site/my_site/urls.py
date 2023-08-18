@@ -24,3 +24,4 @@ urlpatterns = [
     path("", include("news.urls")),
     path("", include("posts.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# Проверка 1234567689
