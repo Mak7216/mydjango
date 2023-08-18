@@ -1,0 +1,2 @@
+# mydjango
+New django repository
