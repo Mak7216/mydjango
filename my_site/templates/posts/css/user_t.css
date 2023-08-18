@@ -1,0 +1,13 @@
+.youtube_button{
+    background-color: red; 
+    color: white;
+}
+.links {
+    position: absolute;
+    top: 40px;
+}
+.back_2 {
+    position: relative;
+    bottom: 975px;
+    left: 1550px;
+}

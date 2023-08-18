@@ -1,0 +1,11 @@
+.button_back_2_main {
+    width: 250px; 
+    height: 30px;
+}
+.button_back {
+    position: relative; 
+    width: 250px; 
+    height: 30px; 
+    left: 270px; 
+    top: 30px;
+}
