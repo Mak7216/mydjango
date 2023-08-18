@@ -1,0 +1,102 @@
+.form_login {
+    position: relative;
+    left: 780px;
+    top: 200px;
+    background-color: rgba(0, 47, 255, 0.432);
+    width: 240px;
+    height: 275px;
+}
+.form_registration {
+    position: relative;
+    left: 780px;
+    top: 200px;
+    background-color: rgba(0, 47, 255, 0.432);
+    width: 240px;
+    height: 470px;
+}
+.button_back_detail {
+    position: relative; 
+    width: 255px; 
+    height: 30px;
+    bottom: 150px;
+}
+.button_back_2_main_detail {
+    width: 250px;
+    height: 30px;
+}
+.button_back_2_main_new {
+    width: 250px; 
+    height: 30px;
+}
+.button_back_new {
+    position: relative; 
+    width: 250px; 
+    height: 30px; 
+    left: 270px; 
+    top: 30px;
+}
+.main_button {
+    position: relative;
+    left: 5px;
+    bottom: 110px;
+    width: 240px;
+
+}
+.l {
+    position: relative;
+    left: 90%;
+    bottom: 135px;
+    width: 50px;
+}
+.r {
+    position: relative;
+    left: 90%;
+    bottom: 135px;
+}
+.ul {
+    position: relative;
+    left: 100px;
+    top: 20px;
+}
+#square {
+    width: 170px;
+    height: 100px;
+    background: #00000041;
+    position: relative;
+    bottom: 50px;
+    left: 89%;
+}
+.youtube_button{
+    background-color: red; 
+    color: white;
+}
+.links {
+    position: absolute;
+    top: 40px;
+}
+.f {
+    position: relative;
+    left: 35%;
+}
+.description {
+    position: relative; 
+    width: 1570px; 
+    height: 50px;
+}
+.postsavideos {
+    position: relative; 
+    width: 150px; 
+    height: 20px;
+}
+.youtube {
+    color: red;
+    font-size: 24px;
+}
+.vk {
+    color: blue; 
+    font-size: 24px;
+}
+.telegram {
+    color: rgb(0, 183, 255);
+    font-size: 24px;
+}

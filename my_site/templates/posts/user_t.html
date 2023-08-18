@@ -4,23 +4,21 @@
         <title>Пользователь</title>
     </head>
     <body>
-        <link rel="stylesheet" href="css/user_t.css" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <h1 style="position: relative; width: 150px; height: 100px;">Username</h1>
         <h6 style="position: relative; width: 500px; height: 30px; bottom: 60px;">Тестовый вариант пользователя</h6>
         <img src="{% static 'img/user.jpg' %}" style="position: relative; width: 100px; height: 100px; bottom: 60px;">
-        <h5 style="position: relative; width: 1570px; height: 50px;">Описание: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus mollitia quo quam, error libero odio amet iste ad ea, architecto maxime ab, recusandae esse. Ex porro fugit fuga sint?</h5>
-        <h6 style="position: relative; width: 150px; height: 20px;">Посты и видео:</h6>
+        <h5 class="description">Описание: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus mollitia quo quam, error libero odio amet iste ad ea, architecto maxime ab, recusandae esse. Ex porro fugit fuga sint?</h5>
+        <h6 class="postsavideos">Посты и видео:</h6>
+        <button onclick="window.location='http://127.0.0.1:8000/users'">=-=-=-=Назад к списку=-=-=-=</button>
+        <button onclick="window.location='http://127.0.0.1:8000'">-=Назад на главную страницу=-</button>
         <h4 class="links">
-        <h6>Больше постов и видео на других площадках:</h6>
-        <a href="https://www.youtube.com/channel/UCMnahQWTCi9rkdG9IWCP4Vg" style="color: red; font-size: 24px;">YouTube</a>
-        <a href="https://vk.com/mkozh16" style="color: blue; font-size: 24px;">VK</a>
-        <a href="https://t.me/user16_f" style="color: rgb(0, 183, 255); font-size: 24px;">Telegram</a>
+            <h6>Больше постов и видео на других площадках:</h6>
+            <a href="https://www.youtube.com/channel/UCMnahQWTCi9rkdG9IWCP4Vg" class="youtube" >YouTube</a>
+            <a href="https://vk.com/mkozh16" class="vk">VK</a>
+            <a href="https://t.me/user16_f" class="telegram">Telegram</a>
         </h4>
-        <h6 class="back_2">
-            <form action="http://127.0.0.1:8000/users" style="position: relative; width: 250px;"><input type="submit" value="=-=-=-=Назад к списку=-=-=-=" style="width: 250px;" /></form>
-            <form action="http://127.0.0.1:8000"  style="left: 100%; width: 250px;"><input type="submit" value="-=Назад на главную страницу=-" style="width: 250px;" /></form>
-        </h6>
     </body>
 </html>
