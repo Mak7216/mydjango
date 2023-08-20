@@ -17,6 +17,9 @@ class SubPost(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     minitext = models.TextField()
 
+class Rating(models.Model):
+    rate = models.FloatField(verbose_name="Рейтинг", max_length=10)
+
 """
 Д/з от 18.08.2023
 1 улучшить модель для новостей (в новостях должны быть картинка и видео) +-
