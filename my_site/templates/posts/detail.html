@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<head>
-<title>Пост №{{post.id}}</title>
-<link href="css/detail.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+        <title>Пост №{{post.id}}</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-</head>
-<h1>{{post.title}}</h1>
-<h2>{{post.body}}</h2>
-<h5>{{post.date}}</h5>
-<h6 style="position: fixed; top: 800px;">
-<button onclick="window.location='http://127.0.0.1:8000/news'" class="button_back_detail">-=-=-=-=-=Назад=-=-=-=-=-=-</button></form>
-<button onclick="window.location='http://127.0.0.1:8000'" class="button_back_2_main_detail">-=Назад на главную страницу=-</button></form>
-</h6>
-</html>
+        <h1>{{post.title}}</h1>
+        <h2>{{post.body}}</h2>
+        <h5>{{post.date}}</h5>
+        <h1>{{post.upload_file}}</h1>
+        <h1>{{post.upload_img}}</h1>
+        <h6>
+        <button onclick="window.location='http://127.0.0.1:8000/news'">Назад</button></form>
+        <button onclick="window.location='http://127.0.0.1:8000'">Назад на главную страницу</button></form>
+        </h6>
+{% endblock content %}

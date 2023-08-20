@@ -1,9 +1,6 @@
 {% load static %}
-<!DOCTYPE html>
-    <head>
-        <title>Пользователь</title>
-    </head>
-    <body>
+{% extends 'base.html' %}
+{% block content %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -20,5 +17,4 @@
             <a href="https://vk.com/mkozh16" class="vk">VK</a>
             <a href="https://t.me/user16_f" class="telegram">Telegram</a>
         </h4>
-    </body>
-</html>
+{% endblock content %}
