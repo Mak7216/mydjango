@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Post
+from .models import Post, Rating
 from django.shortcuts import get_object_or_404
 from django.template import loader
 from .forms import PostForm, NewsForm
@@ -18,8 +18,10 @@ def detail(request, post_id):
     print(post_id)
     template = loader.get_template("posts/detail.html")
     post = get_object_or_404(Post, id=post_id)
+    rate = get_object_or_404(Rating)
     context = {
-        "post": post
+        "post": post,
+        "rate": rate
     }
     return HttpResponse(template.render(context, request))
 
