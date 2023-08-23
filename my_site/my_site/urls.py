@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("news.urls")),
     path("", include("posts.urls")),
+    path("", include("users.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # Проверка 1234567689
