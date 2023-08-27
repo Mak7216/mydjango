@@ -1,6 +1,6 @@
 from django.urls import path
 from posts.views import (
-    index, main, login, reg, user, user_t, detail, create_post, create_news
+    index, main, reg, user, user_t, detail, create_post, create_news
 )
 
 urlpatterns = [

@@ -1,17 +1,17 @@
-{% load static %}
 {% extends 'base.html' %}
 {% block content %}
-        <h1 style="position: relative; width: 150px; height: 100px;">Username</h1>
-        <h6 style="position: relative; width: 500px; height: 30px; bottom: 60px;">Тестовый вариант пользователя</h6>
-        <img src="{% static 'img/user.jpg' %}" style="position: relative; width: 100px; height: 100px; bottom: 60px;">
-        <h5 class="description">Описание: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus mollitia quo quam, error libero odio amet iste ad ea, architecto maxime ab, recusandae esse. Ex porro fugit fuga sint?</h5>
-        <h6 class="postsavideos">Посты и видео:</h6>
-        <button onclick="window.location='http://127.0.0.1:8000/users'">=-=-=-=Назад к списку=-=-=-=</button>
-        <button onclick="window.location='http://127.0.0.1:8000'">-=Назад на главную страницу=-</button>
-        <h4 class="links">
-            <h6>Больше постов и видео на других площадках:</h6>
-            <a href="https://www.youtube.com/channel/UCMnahQWTCi9rkdG9IWCP4Vg" class="youtube" >YouTube</a>
-            <a href="https://vk.com/mkozh16" class="vk">VK</a>
-            <a href="https://t.me/user16_f" class="telegram">Telegram</a>
-        </h4>
+{% load static %}
+    <h1 style="position: relative; width: 150px; height: 100px;">Username</h1>
+    <h6 style="position: relative; width: 500px; height: 30px; bottom: 60px;">Тестовый вариант пользователя</h6>
+    <img src="{% static 'img/user.jpg' %}" style="position: relative; width: 100px; height: 100px; bottom: 60px;">
+    <h5 class="description">Описание: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus mollitia quo quam, error libero odio amet iste ad ea, architecto maxime ab, recusandae esse. Ex porro fugit fuga sint?</h5>
+    <h6 class="postsavideos">Посты и видео:</h6>
+    <button onclick="window.location='http://127.0.0.1:8000/users'">Назад к списку</button>
+    <button onclick="window.location='http://127.0.0.1:8000'">Назад на главную страницу</button>
+    <h4 class="links">
+        <h6>Больше постов и видео на других площадках:</h6>
+        <a href="https://www.youtube.com/channel/UCMnahQWTCi9rkdG9IWCP4Vg" class="youtube" >YouTube</a>
+        <a href="https://vk.com/mkozh16" class="vk">VK</a>
+        <a href="https://t.me/user16_f" class="telegram">Telegram</a>
+    </h4>
 {% endblock content %}
