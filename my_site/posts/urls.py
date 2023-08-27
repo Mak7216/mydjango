@@ -1,10 +1,10 @@
 from django.urls import path
 from posts.views import (
-    index, main, reg, user, user_t, detail, create_post, create_news
+    index, main, reg, user, user_t, detail, create_post, create_news, post
 )
 
 urlpatterns = [
-    path('', main),
+    path('', main, name="main"),
 #    path('login/', login),
     path('register/', reg),
     path('users/', user),
@@ -13,4 +13,5 @@ urlpatterns = [
     path('posts/<int:post_id>/', detail),
     path('create_post/', create_post),
     path('create_news/', create_news),
+    path('rate/', post),
 ]

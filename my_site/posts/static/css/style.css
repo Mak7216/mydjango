@@ -33,13 +33,13 @@
 }
 .l {
     position: relative;
-    left: 90%;
+    left: 81%;
     bottom: 135px;
     width: 50px;
 }
 .r {
     position: relative;
-    left: 90%;
+    left: 81%;
     bottom: 135px;
 }
 .ul {
@@ -53,7 +53,7 @@
     background: #00000041;
     position: relative;
     bottom: 50px;
-    left: 89%;
+    left: 80%;
 }
 .youtube_button{
     background-color: red; 
@@ -98,4 +98,28 @@
     position: relative;
     right: 36px;
     width: 1000px;
+}
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+.searchTerm {
+    width: 200px;
+    padding: 5px;
+    height: 32px;
+}
+.searchText {
+    top: 34px;
+    position: relative;
+    font-size: 13px;
+    right: 150px;
+    
+}
+.wrap{
+    width: 120px;
+    position: absolute;
+    top: 25px;
+    left: 92.5%;
+    transform: translate(-50%, -50%);
 }

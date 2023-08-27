@@ -1,4 +1,6 @@
 from django.db import models
+#from django.contrib.auth.models import User
+from django.conf import settings
 
 
 # Create your models here.
@@ -18,7 +20,9 @@ class SubPost(models.Model):
     minitext = models.TextField()
 
 class Rating(models.Model):
-    rate = models.FloatField(verbose_name="Рейтинг", max_length=10)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    rating = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
 """
 Д/з от 25.08.2023

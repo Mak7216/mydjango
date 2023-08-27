@@ -4,6 +4,8 @@ from .models import Post, Rating
 from django.shortcuts import get_object_or_404
 from django.template import loader
 from .forms import PostForm, NewsForm
+from django.views import View
+from django.http import JsonResponse
 
 # Create your views here.
 def index(request):
@@ -21,7 +23,7 @@ def detail(request, post_id):
     rate = get_object_or_404(Rating)
     context = {
         "post": post,
-        "rate": rate
+        "rate": rate,
     }
     return HttpResponse(template.render(context, request))
 
@@ -31,9 +33,16 @@ def login(request):
     return HttpResponse(template.render(context, request))
 
 def main(request):
+    search_query = request.GET.get("search", "")
+    if search_query:
+        posts = Post.objects.filter(title__icontains=search_query)
+    else:
+        posts = Post.objects.all()
+    posts.all()
     template = loader.get_template("posts/main.html")
     context = {}
     return HttpResponse(template.render(context, request))
+    
 
 def reg(request):
     template = loader.get_template("posts/reg.html")
@@ -61,6 +70,7 @@ def create_post(request):
         post.save() 
         return HttpResponseRedirect("/posts/")
     return HttpResponse(template.render(context, request))
+
 def create_news(request):
     news = NewsForm(request.POST or None)
     context = {
@@ -72,6 +82,13 @@ def create_news(request):
         post_news.save() 
         return HttpResponseRedirect("/news/")
     return HttpResponse(template.render(context, request))
+
+def post(request):
+    user = request.user
+    rating = request.POST.get('rating')
+    Rating.objects.create(user=user, rating=rating)
+    
+    return JsonResponse({'message': 'Рейтинг сохранен'})
 
 #def posts(request):
 #    template = loader.get_template("posts/login.html")
