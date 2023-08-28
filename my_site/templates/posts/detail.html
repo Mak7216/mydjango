@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load static %}
         <title>Пост №{{post.id}}</title>
         <h1>{{post.title}}</h1>
         <h2>{{post.body}}</h2>
@@ -8,8 +7,8 @@
         <h1>{{post.upload_file}}</h1>
         <h1>{{post.upload_img}}</h1>
         <div>
-                <h1>{{rate.rating}}</h1>
-                <button onclick="window.location='http://127.0.0.1:8000/rate/'">👍</button>
+            <h1>{{rate.rating}}</h1>
+            <button onclick="window.location='http://127.0.0.1:8000/rate_plus/{{post.id}}'">👍</button>
         </div>
         <h6>
         <button onclick="window.location='http://127.0.0.1:8000/news'">Назад</button></form>

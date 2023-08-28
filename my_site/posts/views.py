@@ -5,9 +5,9 @@ from django.shortcuts import get_object_or_404
 from django.template import loader
 from .forms import PostForm, NewsForm
 from django.views import View
-from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+@login_required
 def index(request):
     template = loader.get_template("posts/index.html")
     posts = Post.objects.all()
@@ -20,7 +20,7 @@ def detail(request, post_id):
     print(post_id)
     template = loader.get_template("posts/detail.html")
     post = get_object_or_404(Post, id=post_id)
-    rate = get_object_or_404(Rating, id=post_id)
+    rate = get_object_or_404(Rating, post=post)
     context = {
         "post": post,
         "rate": rate,
@@ -65,9 +65,11 @@ def create_post(request):
         "form": form
     }
     template = loader.get_template("posts/create_post.html")
+    print(form.is_valid())
     if form.is_valid():
+        print("Sucess")
         post = form.save()
-        new_rating = Rating(value=1)
+        new_rating = Rating(post=post, rating=1)
         post.save()
         new_rating.save()
         return HttpResponseRedirect("/posts/")
@@ -87,15 +89,21 @@ def create_news(request):
 
 class RateView(View):
     def like(request, post_id):
-        rating = Rating.objects.get(id=post_id)
-        rating.value += 0.1
+        rating = Rating.objects.get(post=post_id)
+        rating.rating += 0.1
         rating.save()
 
-        return HttpResponse("posts/rate_created.html")
+        context = {}
+
+        template = loader.get_template("posts/rate_created.html")
+        return HttpResponse(template.render(context, request))
     
     def dislike(request, post_id):
-        rating = Rating.objects.get(id=post_id)
-        rating.value -= 0.1
+        rating = Rating.objects.get(post=post_id)
+        rating.rating -= 0.1
         rating.save()
 
-        return HttpResponse("posts/rate_created.html")
+        context = {}
+
+        template = loader.get_template("posts/rate_created.html")
+        return HttpResponse(template.render(context, request))

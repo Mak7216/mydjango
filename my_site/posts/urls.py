@@ -5,7 +5,6 @@ from posts.views import (
 
 urlpatterns = [
     path('', main, name="main"),
-#    path('login/', login),
     path('register/', reg),
     path('users/', user),
     path('u/test/', user_t),
@@ -13,6 +12,6 @@ urlpatterns = [
     path('posts/<int:post_id>/', detail),
     path('create_post/', create_post),
     path('create_news/', create_news),
-    path('rate_plus/', RateView.like),
-    path('rate_minus/', RateView.dislike),
+    path('rate_plus/<int:post_id>', RateView.like),
+    path('rate_minus/<int:post_id>', RateView.dislike),
 ]

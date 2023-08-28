@@ -20,12 +20,12 @@ class SubPost(models.Model):
     minitext = models.TextField()
 
 class Rating(models.Model):
-    rating = models.FloatField(max_length=10)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    rating = models.FloatField(max_length=10, null=True)
 
 """
-Д/з от 25.08.2023
-1 создать поиск с ORM(консоль)
-2 доработать rating +-
-3 что такое DNS и как он работает(подробно) +
-4 дописывать SQL +
+Д/з от 28.08.2023
+1 проработать сайт
+2 выучить dns
+3 писать sql до индексов
 """
