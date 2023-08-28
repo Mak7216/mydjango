@@ -20,7 +20,7 @@ def detail(request, post_id):
     print(post_id)
     template = loader.get_template("posts/detail.html")
     post = get_object_or_404(Post, id=post_id)
-    rate = get_object_or_404(Rating)
+    rate = get_object_or_404(Rating, id=post_id)
     context = {
         "post": post,
         "rate": rate,
@@ -67,7 +67,9 @@ def create_post(request):
     template = loader.get_template("posts/create_post.html")
     if form.is_valid():
         post = form.save()
-        post.save() 
+        new_rating = Rating(value=1)
+        post.save()
+        new_rating.save()
         return HttpResponseRedirect("/posts/")
     return HttpResponse(template.render(context, request))
 
@@ -83,14 +85,17 @@ def create_news(request):
         return HttpResponseRedirect("/news/")
     return HttpResponse(template.render(context, request))
 
-def post(request):
-    user = request.user
-    rating = request.POST.get('rating')
-    Rating.objects.create(user=user, rating=rating)
-    
-    return JsonResponse({'message': 'Рейтинг сохранен'})
+class RateView(View):
+    def like(request, post_id):
+        rating = Rating.objects.get(id=post_id)
+        rating.value += 0.1
+        rating.save()
 
-#def posts(request):
-#    template = loader.get_template("posts/login.html")
-#    context = {}
-#    return HttpResponse(template.render(context, request))
+        return HttpResponse("posts/rate_created.html")
+    
+    def dislike(request, post_id):
+        rating = Rating.objects.get(id=post_id)
+        rating.value -= 0.1
+        rating.save()
+
+        return HttpResponse("posts/rate_created.html")
