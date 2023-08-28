@@ -20,7 +20,6 @@ class SubPost(models.Model):
     minitext = models.TextField()
 
 class Rating(models.Model):
-    author = models.CharField(max_length=100)
     rating = models.FloatField(max_length=10)
 
 """
