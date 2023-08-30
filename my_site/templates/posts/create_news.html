@@ -1,5 +1,6 @@
 {% extends 'base_news.html' %}
 {% block content %}
+{% load static %}
 <form action="/create_news/" method="post">
     {% csrf_token %}
     {{ form }}

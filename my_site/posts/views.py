@@ -7,7 +7,7 @@ from .forms import PostForm, NewsForm
 from django.views import View
 from django.contrib.auth.decorators import login_required
 
-@login_required
+
 def index(request):
     template = loader.get_template("posts/index.html")
     posts = Post.objects.all()
@@ -32,6 +32,7 @@ def login(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
+@login_required
 def main(request):
     search_query = request.GET.get("search", "")
     if search_query:

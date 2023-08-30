@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Все публикации</h1>
-    <ul class="ul">
+    <ul class="posts">
         {% for post in posts %}
             <h2 class="h2__"><form action="/posts/{{ post.id }}/"><input type="submit" value={{post.title}} /></form></h2>
             <h5>{{post.body}}</h5>

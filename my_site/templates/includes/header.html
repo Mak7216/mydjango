@@ -1,2 +1,12 @@
 {% load static %}
-<header></header>
+<header>
+    <button onclick="window.location='http://127.0.0.1:8000/'" class="back_2_main_menu_header"><img src="{% static 'img/logo.jpg' %}"></button>
+    <a href="http://127.0.0.1:8000/login" class="login">Вход</a>
+    <a href="http://127.0.0.1:8000/register" class="registration">Регистрация</a>
+    <div class="wrap">
+        <form class="search" action="{% url 'main' %}">
+          <input type="text" class="searchTerm" placeholder="Поиск поста" name="search">
+          <h6 class="searchText">Нажмите Enter</h6>
+        </form>
+    </div>
+</header>

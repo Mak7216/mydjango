@@ -24,36 +24,21 @@
     width: 250px;
     height: 30px;
 }
-.main_button {
-    position: relative;
-    left: 5px;
-    bottom: 110px;
-    width: 240px;
-
-}
-.l {
+.login {
     position: relative;
     left: 81%;
     bottom: 135px;
     width: 50px;
 }
-.r {
+.registration {
     position: relative;
     left: 81%;
     bottom: 135px;
 }
-.ul {
+.posts {
     position: relative;
     left: 100px;
     top: 20px;
-}
-#square {
-    width: 170px;
-    height: 100px;
-    background: #00000041;
-    position: relative;
-    bottom: 50px;
-    left: 80%;
 }
 .youtube_button{
     background-color: red; 
@@ -63,7 +48,7 @@
     position: absolute;
     top: 40px;
 }
-.f {
+.user {
     position: relative;
     left: 35%;
 }
@@ -122,4 +107,9 @@
     top: 25px;
     left: 92.5%;
     transform: translate(-50%, -50%);
+}
+.back_2_main_menu_header {
+    color: white;
+    border-radius: 10px;
+    border-color: white;
 }

@@ -9,9 +9,10 @@
         <div>
             <h1>{{rate.rating}}</h1>
             <button onclick="window.location='http://127.0.0.1:8000/rate_plus/{{post.id}}'">👍</button>
+            <button onclick="window.location='http://127.0.0.1:8000/rate_minus/{{post.id}}'">👎</button>
         </div>
         <h6>
-        <button onclick="window.location='http://127.0.0.1:8000/news'">Назад</button></form>
+        <button onclick="window.location='http://127.0.0.1:8000/posts'">Назад</button></form>
         <button onclick="window.location='http://127.0.0.1:8000'">Назад на главную страницу</button></form>
         </h6>
 {% endblock content %}
