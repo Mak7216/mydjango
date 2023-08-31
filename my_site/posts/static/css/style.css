@@ -24,17 +24,6 @@
     width: 250px;
     height: 30px;
 }
-.login {
-    position: relative;
-    left: 81%;
-    bottom: 135px;
-    width: 50px;
-}
-.registration {
-    position: relative;
-    left: 81%;
-    bottom: 135px;
-}
 .posts {
     position: relative;
     left: 100px;
@@ -112,4 +101,10 @@
     color: white;
     border-radius: 10px;
     border-color: white;
+}
+.create_news {
+    width: 120px;
+}
+.create_post {
+    width: 120px;
 }

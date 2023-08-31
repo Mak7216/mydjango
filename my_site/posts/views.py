@@ -34,12 +34,6 @@ def login(request):
 
 @login_required
 def main(request):
-    search_query = request.GET.get("search", "")
-    if search_query:
-        posts = Post.objects.filter(title__icontains=search_query)
-    else:
-        posts = Post.objects.all()
-    posts.all()
     template = loader.get_template("posts/main.html")
     context = {}
     return HttpResponse(template.render(context, request))
