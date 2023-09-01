@@ -1,3 +1,3 @@
-document.querySelector("#submit").onclick = function(){
+document.querySelector("#java_search").onclick = function(){
     alert("Вы нажали на кнопку");
 }

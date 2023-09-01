@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h1>{{poll.title}}</h1>
+        <ul class="posts">
+            {% for question in questions %}
+                <h1>{{question.question}}</h1>
+                {% for answer in question.answers.all %}
+                    <h1>{{answer.answer}}</h1>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+        <h6>
+        <button onclick="window.location='http://127.0.0.1:8000/polls'">Назад</button></form>
+        <button onclick="window.location='http://127.0.0.1:8000'">Назад на главную страницу</button></form>
+        </h6>
+{% endblock content %}
