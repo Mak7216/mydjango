@@ -34,23 +34,23 @@ def login(request):
 
 @login_required
 def main(request):
-    template = loader.get_template("posts/main.html")
+    template = loader.get_template("main.html")
     context = {}
     return HttpResponse(template.render(context, request))
     
 
 def reg(request):
-    template = loader.get_template("posts/reg.html")
+    template = loader.get_template("users/reg.html")
     context = {}
     return HttpResponse(template.render(context, request))
 
 def user(request):
-    template = loader.get_template("posts/user.html")
+    template = loader.get_template("users/user.html")
     context = {}
     return HttpResponse(template.render(context, request))
 
 def user_t(request):
-    template = loader.get_template("posts/user_t.html")
+    template = loader.get_template("users/user_t.html")
     context = {}
     return HttpResponse(template.render(context, request))
 
@@ -60,9 +60,7 @@ def create_post(request):
         "form": form
     }
     template = loader.get_template("posts/create_post.html")
-    print(form.is_valid())
     if form.is_valid():
-        print("Sucess")
         post = form.save()
         new_rating = Rating(post=post, rating=1)
         post.save()
@@ -75,7 +73,7 @@ def create_news(request):
     context = {
         "form": news
     }
-    template = loader.get_template("posts/create_news.html")
+    template = loader.get_template("news/create_news.html")
     if news.is_valid():
         post_news = news.save()
         post_news.save() 

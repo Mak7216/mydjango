@@ -1,11 +1,12 @@
 from django.db import models
 #from django.contrib.auth.models import User
 from django.conf import settings
+from django.core.validators import MinLengthValidator
 
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(verbose_name="Заголовок",max_length=50)
+    title = models.CharField(verbose_name="Заголовок",max_length=50, validators=[MinLengthValidator(0)])
     body = models.TextField(verbose_name="Содержание",max_length=1000)
     date = models.DateField(auto_now_add=True)
     upload_file = models.FileField(upload_to="./uploads/posts/files/%Y/%m/%d/", verbose_name="Добавить файл (.pdf)", null=True)
@@ -13,7 +14,9 @@ class Post(models.Model):
     
     def __str__(self) -> str:
         return self.title
-
+    
+    def clean(self) -> None:
+        return super().clean()
 
 class SubPost(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -24,8 +27,9 @@ class Rating(models.Model):
     rating = models.FloatField(max_length=10, null=True)
 
 """
-Д/з от 1.09.2023
-1 реструктуризировать .html шаблоны по папкам
-2 дописать sql
-3 улучшить сайт
+Д/з от 4.09.2023
+1 сделать шапку сайта
+2 сделать подвал сайта
+3 дописать sql
+4 посмотреть что такое cookies
 """

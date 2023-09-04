@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<ul class="posts">
+    {% for poll in polls %}
+        <h2 class="h2__"><form action="/polls/{{ poll.id }}/"><input type="submit" value={{poll.title}} /></form></h2>
+        <h5>{{poll.title}}</h5>
+        <h6>{{poll.description}}</h6>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

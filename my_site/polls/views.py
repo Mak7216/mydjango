@@ -6,7 +6,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def polls(request):
-    template = loader.get_template("posts/polls.html")
+    template = loader.get_template("polls/polls.html")
     polls = Poll.objects.all()
     context = {
         "polls": polls,
@@ -14,7 +14,7 @@ def polls(request):
     return HttpResponse(template.render(context, request))
 
 def detail_polls(request, poll_id):
-    template = loader.get_template("posts/detail_poll.html")
+    template = loader.get_template("polls/detail_poll.html")
     poll = Poll.objects.get(id=poll_id)
     questions = poll.questions.all()
     context = {

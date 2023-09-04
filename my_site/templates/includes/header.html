@@ -6,4 +6,10 @@
     <div class="wrap">
           <button type="submit" id="java_search">Поиск по ID</button>
     </div>
+    <script>
+        document.querySelector("#java_search").onclick = function(){
+            const insert = prompt('Введите ID поста')
+            window.location.replace("http://127.0.0.1:8000/posts/" + insert + "/");
+        }
+    </script>
 </header>

@@ -98,9 +98,8 @@
     transform: translate(-50%, -50%);
 }
 .back_2_main_menu_header {
-    color: white;
-    border-radius: 10px;
-    border-color: white;
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
 }
 .create_news {
     width: 120px;
