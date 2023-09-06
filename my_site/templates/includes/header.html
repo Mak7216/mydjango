@@ -1,15 +1,27 @@
 {% load static %}
-<header>
+<header class="header">
     <button onclick="window.location='http://127.0.0.1:8000/'" class="back_2_main_menu_header"><img src="{% static 'img/logo.jpg' %}"></button>
     <a href="http://127.0.0.1:8000/login" class="login">Вход</a>
     <a href="http://127.0.0.1:8000/register" class="registration">Регистрация</a>
     <div class="wrap">
-          <button type="submit" id="java_search">Поиск по ID</button>
+          <button type="submit" id="java_search_post" class="search_post">Поиск по ID поста</button>
+          <button type="submit" id="java_search_news" class="search_news">Поиск по ID новости</button>
     </div>
+    <button onclick="window.location='http://127.0.0.1:8000/posts'">Все посты</button>
+    <button onclick="window.location='http://127.0.0.1:8000/users'">Список пользователей</button>
+    <button onclick="window.location='http://127.0.0.1:8000/news'">Все новости</button>
+    <button onclick="window.location='http://127.0.0.1:8000/create_news'">Создать новость</button>
+    <button onclick="window.location='http://127.0.0.1:8000/create_post'">Создать пост</button>
     <script>
-        document.querySelector("#java_search").onclick = function(){
+        document.querySelector("#java_search_post").onclick = function(){
             const insert = prompt('Введите ID поста')
-            window.location.replace("http://127.0.0.1:8000/posts/" + insert + "/");
+            if (insert == null) {alert("Неправильный формат данных");} 
+            else {window.location.replace("http://127.0.0.1:8000/posts/" + insert + "/");}
+        }
+        document.querySelector("#java_search_news").onclick = function(){
+            const insert = prompt('Введите ID новости')
+            if (insert == null) {alert("Неправильный формат данных");} 
+            else {window.location.replace("http://127.0.0.1:8000/news/" + insert + "/");}
         }
     </script>
 </header>

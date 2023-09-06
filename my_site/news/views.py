@@ -19,7 +19,7 @@ def detail_new(request, post_id):
     return HttpResponse(template.render(context, request))
 
 def news(request):
-    template = loader.get_template("news/news.html")
+    template = loader.get_template("main.html")
     posts = News.objects.all()
     context = {
         "posts": posts

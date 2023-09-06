@@ -63,15 +63,14 @@
     color: rgb(0, 183, 255);
     font-size: 24px;
 }
+.discord {
+    color: rgb(56, 56, 255);
+    font-size: 24px;
+}
 .ul_news {
     position: relative;
     left: 100px;
     top: 100px;
-}
-.h2__ {
-    position: relative;
-    right: 36px;
-    width: 1000px;
 }
 .search {
     width: 100%;
@@ -93,9 +92,17 @@
 .wrap{
     width: 120px;
     position: absolute;
-    top: 25px;
-    left: 92.5%;
+    top: 40px;
+    left: 90%;
     transform: translate(-50%, -50%);
+}
+.search_post {
+    height: 30px;
+    width: 200px;
+}
+.search_news {
+    height: 30px;
+    width: 200px;
 }
 .back_2_main_menu_header {
     color: rgb(255, 255, 255);
@@ -106,4 +113,34 @@
 }
 .create_post {
     width: 120px;
+}
+.header {
+    background-color: rgb(206, 206, 206);
+    border-radius: 5px;
+}
+.footer {
+    background-color: rgb(128, 128, 128);
+    position: relative;
+    top: 500px;
+    height: 400px;
+    width: 100%;
+}
+.footer_endpage {
+    color: white;
+}
+.date_news {
+    position: relative;
+    height: 50px;
+}
+.date_posts {
+    position: relative;
+    height: 50px;
+}
+.body_post {
+    position: relative;
+    height: 30px;
+}
+.footer_link_mail {
+    color: white;
+    top: 50px;
 }
