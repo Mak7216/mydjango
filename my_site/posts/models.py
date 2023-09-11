@@ -27,9 +27,8 @@ class Rating(models.Model):
     rating = models.FloatField(max_length=10, null=True)
 
 """
-Д/з от 4.09.2023
-1 сделать шапку сайта
-2 сделать подвал сайта
-3 дописать sql
-4 посмотреть что такое cookies
+Д/з от 11.09.2023
+1 посмотреть что такое cookies, сессии, токены
+2 сделать @login_required на все view, кроме login
+3 выучить все команды ORM Django 
 """
