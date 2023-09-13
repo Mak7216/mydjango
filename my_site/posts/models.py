@@ -28,7 +28,7 @@ class Rating(models.Model):
 
 """
 Д/з от 11.09.2023
-1 посмотреть что такое cookies, сессии, токены
-2 сделать @login_required на все view, кроме login
+1 посмотреть что такое cookies, сессии, токены +
+2 сделать @login_required на все view, кроме login +
 3 выучить все команды ORM Django 
 """

@@ -8,6 +8,7 @@ from django.views import View
 from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def index(request):
     template = loader.get_template("posts/index.html")
     posts = Post.objects.all()
@@ -16,6 +17,7 @@ def index(request):
     }
     return HttpResponse(template.render(context, request))
 
+@login_required
 def detail(request, post_id):
     print(post_id)
     template = loader.get_template("posts/detail.html")
@@ -44,16 +46,19 @@ def reg(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
+@login_required
 def user(request):
     template = loader.get_template("users/user.html")
     context = {}
     return HttpResponse(template.render(context, request))
 
+@login_required
 def user_t(request):
     template = loader.get_template("users/user_t.html")
     context = {}
     return HttpResponse(template.render(context, request))
 
+@login_required
 def create_post(request):
     form = PostForm(request.POST or None)
     context = {
@@ -68,6 +73,7 @@ def create_post(request):
         return HttpResponseRedirect("/posts/")
     return HttpResponse(template.render(context, request))
 
+@login_required
 def create_news(request):
     news = NewsForm(request.POST or None)
     context = {
@@ -80,6 +86,7 @@ def create_news(request):
         return HttpResponseRedirect("/news/")
     return HttpResponse(template.render(context, request))
 
+@login_required
 class RateView(View):
     def like(request, post_id):
         rating = Rating.objects.get(post=post_id)
